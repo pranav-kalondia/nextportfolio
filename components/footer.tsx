@@ -55,7 +55,7 @@ export default function Footer() {
           </p>
 
           <a
-            href="mailto:hello@pranavkalondia.com"
+            href="mailto:pranavkalondia1977@gmail.com"
             className="group mt-4 block"
           >
             <h2 className="text-[80px] font-[500] leading-[0.95] tracking-[-4px] text-[#c8d3de] transition-colors duration-500 hover:text-[#cd2151] sm:text-[120px] md:text-[160px] lg:text-[200px]">
