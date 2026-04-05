@@ -326,32 +326,36 @@ export default function Hero() {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    const sections = NAV_ITEMS.map((item) =>
-      document.getElementById(item.targetId)
-    ).filter((section): section is HTMLElement => section instanceof HTMLElement);
-
-    if (!sections.length) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleEntries = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-
-        const mostVisibleSection = visibleEntries[0];
-        if (!mostVisibleSection) return;
-
-        setActiveNav(mostVisibleSection.target.id);
-      },
-      {
-        threshold: [0.2, 0.35, 0.5, 0.7],
-        rootMargin: "-30% 0px -45% 0px",
+    const getAbsoluteTop = (el: HTMLElement): number => {
+      let top = 0;
+      let node: HTMLElement | null = el;
+      while (node) {
+        top += node.offsetTop;
+        node = node.offsetParent as HTMLElement | null;
       }
-    );
+      return top;
+    };
 
-    sections.forEach((section) => observer.observe(section));
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const offset = window.innerHeight * 0.35;
+      let current = "home";
 
-    return () => observer.disconnect();
+      NAV_ITEMS.forEach((item) => {
+        const el = document.getElementById(item.targetId);
+        if (!el) return;
+        if (getAbsoluteTop(el) - offset <= scrollY) {
+          current = item.targetId;
+        }
+      });
+
+      setActiveNav(current);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -360,9 +364,8 @@ export default function Hero() {
       <AntigravityBackground />
 
       <nav
-        className={`fixed inset-x-0 top-0 z-50 flex h-[68px] items-center justify-between border-b border-black/10 bg-white px-5 transition-all duration-[820ms] md:px-10 ${
-          showHeroContent ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-4 opacity-0"
-        }`}
+        className={`fixed inset-x-0 top-0 z-50 flex h-[68px] items-center justify-between border-b border-black/10 bg-white px-5 transition-all duration-[820ms] md:px-10 ${showHeroContent ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-4 opacity-0"
+          }`}
       >
         <button
           type="button"
@@ -411,9 +414,8 @@ export default function Hero() {
       >
         <div className="mb-10 flex min-h-[32px] items-center justify-center">
           <div
-            className={`inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-1.5 text-xs font-semibold text-[#555550] shadow-sm transition-all duration-[820ms] ${
-              showHeroContent ? "translate-y-0 opacity-100 blur-0" : "pointer-events-none -translate-y-4 opacity-0 blur-[10px]"
-            }`}
+            className={`inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-1.5 text-xs font-semibold text-[#555550] shadow-sm transition-all duration-[820ms] ${showHeroContent ? "translate-y-0 opacity-100 blur-0" : "pointer-events-none -translate-y-4 opacity-0 blur-[10px]"
+              }`}
           >
             <span className="h-2 w-2 rounded-full bg-green-500 shadow-[0_0_0_3px_rgba(34,197,94,0.2)]" />
             Available for freelance work
@@ -435,15 +437,11 @@ export default function Hero() {
 
         {isTypingComplete ? (
           <div
-            className={`flex w-full flex-col items-center transition-all duration-[900ms] ${
-              showHeroContent ? "translate-y-0 opacity-100 blur-0" : "translate-y-8 opacity-0 blur-[14px]"
-            }`}
+            className={`flex w-full flex-col items-center transition-all duration-[900ms] ${showHeroContent ? "translate-y-0 opacity-100 blur-0" : "translate-y-8 opacity-0 blur-[14px]"
+              }`}
           >
             <p className="mx-auto mb-10 max-w-[760px] text-[17px] font-medium leading-[1.65] text-[#555550]">
-              Hi, I&apos;m Pranav - a UI/UX Designer &amp; Front-End Developer with{" "}
-              <strong className="font-semibold text-[#111110]">2+ years of experience</strong>
-              <br className="hidden md:block" />
-              <span className="md:inline-block md:pt-1">building intuitive digital experiences for humans.</span>
+              I&apos;m Pranav, a UI/UX Designer passionate about creating clean, human-centered interfaces backed by product thinking, user research, AI, strategic decision-making, and front-end development skills to craft experiences that solve real problems.
             </p>
 
             <div className="mb-5 flex flex-wrap items-center justify-center gap-3">
@@ -457,7 +455,12 @@ export default function Hero() {
               <button
                 type="button"
                 onClick={() => scrollToSection("contact")}
-                className="group inline-flex items-center gap-2 rounded-full border border-[#d1d7e2] bg-gradient-to-b from-[#ffffff] to-[#e8edf4] px-7 py-3 text-sm font-semibold text-[#1f2733] no-underline shadow-[0_7px_16px_-12px_rgba(15,23,42,0.55),inset_0_1px_0_rgba(255,255,255,0.95)] transition duration-200 hover:-translate-y-[1px] hover:border-[#bcc5d3] hover:from-[#ffffff] hover:to-[#dde4ee] hover:shadow-[0_12px_22px_-14px_rgba(15,23,42,0.65),inset_0_1px_0_rgba(255,255,255,0.95)]"
+                className="group inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm font-semibold text-[#1f2733] transition duration-200 hover:-translate-y-[1px]"
+                style={{
+                  background: "linear-gradient(to bottom, #ffffff, #e8edf4)",
+                  border: "1px solid #d1d7e2",
+                  boxShadow: "0 7px 16px -12px rgba(15,23,42,0.55), inset 0 1px 0 rgba(255,255,255,0.95)",
+                }}
               >
                 <span>Let&apos;s Talk</span>
                 <svg

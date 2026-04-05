@@ -28,7 +28,7 @@ const EXPERIENCES: Experience[] = [
       "Tightening collaboration across cross-functional teams",
       "Keeping the experience coherent from discovery to release",
     ],
-    tags: ["Product Strategy", "Delivery"],
+    tags: ["Product Strategy", "Product research"],
     capabilities: [
       "Roadmapping",
       "Sprint Planning",
@@ -51,7 +51,7 @@ const EXPERIENCES: Experience[] = [
       "Worked closely with the team to keep product touchpoints visually consistent",
       "Used user feedback to refine flows and improve the final output",
     ],
-    tags: ["HTML5", "CSS"],
+    tags: ["Ui/Ux", "Web Development"],
     capabilities: [
       "HTML5",
       "CSS",
@@ -75,7 +75,7 @@ const EXPERIENCES: Experience[] = [
       "Created wireframes and prototypes for new product features",
       "Stayed updated with UI/UX design trends and best practices",
     ],
-    tags: ["Leadership Development", "Project Performance"],
+    tags: ["Ui/Ux", "Ux research"],
     capabilities: [
       "User Research",
       "Wireframing",
@@ -93,13 +93,13 @@ const EXPERIENCES: Experience[] = [
     descriptor:
       "Designed websites and apps while translating product concepts into functional front-end experiences.",
     detailPoints: [
-      "Designed user-friendly interfaces for web and app experiences",
-      "Translated designs into functional front-end pages",
-      "Ensured cross-browser compatibility and responsive behavior",
-      "Collaborated with backend developers and UX/UI designers",
-      "Helped bring digital concepts to life through production-ready execution",
+      "Designed intuitive, user-friendly interfaces for websites and mobile applications end-to-end",
+      "Translated UI/UX designs into clean, functional front-end code with pixel-perfect accuracy",
+      "Ensured seamless cross-browser compatibility and responsive behavior across all device sizes",
+      "Collaborated closely with backend developers and UX/UI designers to align on product vision",
+      "Played a key role in bringing digital product concepts from wireframe to production-ready delivery",
     ],
-    tags: ["Leadership Development", "User Interface Design"],
+    tags: ["Ui/Ux", "Web Development"],
     capabilities: [
       "User Interface Design",
       "Front-end Development",
@@ -446,7 +446,7 @@ export default function WorkExperience() {
                                     transition: `opacity 0.4s ease ${pointIndex * 0.06}s, transform 0.4s ease ${pointIndex * 0.06}s`,
                                   }}
                                 >
-                                  <span className="mt-[7px] flex h-[7px] w-[7px] shrink-0 rounded-full bg-[#cd2151]/50" />
+                                  <span className="mt-[7px] flex h-[7px] w-[7px] shrink-0 rounded-full bg-[#cd2151]" />
                                   {point}
                                 </li>
                               ))}
