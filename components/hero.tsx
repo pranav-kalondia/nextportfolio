@@ -481,8 +481,7 @@ export default function Hero() {
 
             <div className="mb-[56px] flex items-center justify-center gap-3 text-black">
               <a
-                href="#"
-                aria-label="LinkedIn"
+                href="https://www.linkedin.com/in/pranav-kalondia-90227422a/"
                 className="grid h-9 w-9 place-items-center rounded-full border border-black/15 bg-white transition hover:-translate-y-[1px] hover:border-black/45 hover:bg-black/[0.03]"
               >
                 <svg viewBox="0 0 24 24" className="h-4 w-4 fill-[#111111]" aria-hidden="true">
@@ -490,22 +489,19 @@ export default function Hero() {
                 </svg>
               </a>
               <a
-                href="#"
-                aria-label="Behance"
+                href="https://www.behance.net/pranavkalondia"
                 className="grid h-9 w-9 place-items-center rounded-full border border-black/15 bg-white transition hover:-translate-y-[1px] hover:border-black/45 hover:bg-black/[0.03]"
               >
                 <img src="https://cdn.simpleicons.org/behance/111111" alt="" className="h-4 w-4" loading="lazy" />
               </a>
               <a
-                href="#"
-                aria-label="GitHub"
+                href="https://github.com/pranav-kalondia"
                 className="grid h-9 w-9 place-items-center rounded-full border border-black/15 bg-white transition hover:-translate-y-[1px] hover:border-black/45 hover:bg-black/[0.03]"
               >
                 <img src="https://cdn.simpleicons.org/github/111111" alt="" className="h-4 w-4" loading="lazy" />
               </a>
               <a
-                href="#"
-                aria-label="Instagram"
+                href="https://www.instagram.com/pranav_kalondia/"
                 className="grid h-9 w-9 place-items-center rounded-full border border-black/15 bg-white transition hover:-translate-y-[1px] hover:border-black/45 hover:bg-black/[0.03]"
               >
                 <img src="https://cdn.simpleicons.org/instagram/111111" alt="" className="h-4 w-4" loading="lazy" />
