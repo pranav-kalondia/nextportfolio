@@ -24,7 +24,7 @@ const EXPERIENCES: Experience[] = [
       "Aligning product direction, user needs, and shipping rhythm across active product lines.",
     detailPoints: [
       "I work at the seam between product thinking and execution",
-      "Shaping priorities and delivery cadence",
+      "Designing end-to-end UI/UX experiences from concept to implementation",
       "Tightening collaboration across cross-functional teams",
       "Keeping the experience coherent from discovery to release",
     ],
