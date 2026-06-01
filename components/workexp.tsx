@@ -16,7 +16,7 @@ type Experience = {
 
 const EXPERIENCES: Experience[] = [
   {
-    role: "Tech Product Manager",
+    role: "Product Manager",
     company: "Dzylo",
     period: "july 2025 - Present",
     status: "current",
