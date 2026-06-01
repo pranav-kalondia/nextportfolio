@@ -28,7 +28,7 @@ const EXPERIENCES: Experience[] = [
       "Tightening collaboration across cross-functional teams",
       "Keeping the experience coherent from discovery to release",
     ],
-    tags: ["Product Strategy", "Product research"],
+    tags: ["Product Planning", "Product research"],
     capabilities: [
       "Roadmapping",
       "Ui/Ux Design",
