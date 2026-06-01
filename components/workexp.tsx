@@ -31,8 +31,8 @@ const EXPERIENCES: Experience[] = [
     tags: ["Product Strategy", "Product research"],
     capabilities: [
       "Roadmapping",
-      "Sprint Planning",
-      "User Research",
+      "Ui/Ux Design",
+      "UX Research",
       "Cross-functional Leadership",
       "Figma",
       "Analytics",
